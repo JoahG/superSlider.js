@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>superSlider.js by JoahG</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>superSlider.js</h1>
+        <p>superSlider.js: the superhero of jQuery sliders</p>
+
+        <p class="view"><a href="https://github.com/JoahG/superSlider.js">View the Project on GitHub <small>JoahG/superSlider.js</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/JoahG/superSlider.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/JoahG/superSlider.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/JoahG/superSlider.js">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>To see a demo of superSlider.js in action, check out the <a href="http://www.joahg.com/superSlider.js/demo.html">demo page</a>.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h4>
+<a name="initialization" class="anchor" href="#initialization"><span class="octicon octicon-link"></span></a>Initialization</h4>
+
+<p>The jQuery JavaScript library is a dependency of superSlider.js, so be sure to reference the jQuery library before initiating superSlider.js:</p>
+
+<div class="highlight highlight-html"><pre>     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/superSlider.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>To initialize a superSlider, call the jQuery <code>.superSlider()</code> function on the jQuery object containing your HTML Slider, passing in an object for configurations:</p>
+
+<div class="highlight highlight-html"><pre>     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://code.jquery.com/jquery-latest.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/superSlider.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+     <span class="nt">&lt;script&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">superSlider</span><span class="p">({</span>
+                <span class="c1">// Configurations will live here.</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+     <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<p>You should also link to the included <code>superSlider.css</code> file for styling, unless you want to build your own styles.</p>
+
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"/path/to/superSlider.css"</span><span class="nt">&gt;</span>
+</pre></div>
+
+<h4>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h4>
+
+<h6>
+<a name="leftright-arrows" class="anchor" href="#leftright-arrows"><span class="octicon octicon-link"></span></a>Left/Right Arrows</h6>
+
+<p>There are several configurations available for the left and right arrows for the slider. They can all be seen below, in the context of a <code>.superSlider()</code> call.</p>
+
+<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">superSlider</span><span class="p">({</span>
+            <span class="s1">'left-arrow-class'</span><span class="o">:</span> <span class="s1">'string'</span><span class="p">,</span>         <span class="c1">//Sets the selector class for the left arrow (default '.left-arrow')</span>
+            <span class="s1">'right-arrow-class'</span><span class="o">:</span> <span class="s1">'string'</span><span class="p">,</span>        <span class="c1">//Sets the selector class for the right arrow (default '.right-arrow')</span>
+            <span class="s1">'left-arrow-src'</span><span class="o">:</span> <span class="s1">'string'</span><span class="p">,</span>           <span class="c1">//Sets the image source for the left arrow (default 'images/chevron-left.png')</span>
+            <span class="s1">'right-arrow-src'</span><span class="o">:</span> <span class="s1">'string'</span><span class="p">,</span>          <span class="c1">//Sets the image source for the right arrow (default 'images/chevron-right.png')</span>
+            <span class="s1">'left-arrow-inactive-src'</span><span class="o">:</span> <span class="s1">'string'</span><span class="p">,</span>  <span class="c1">//Sets the image source for the inactive left arrow (default 'images/chevron-left-inactive.png')</span>
+            <span class="s1">'right-arrow-inactive-src'</span><span class="o">:</span> <span class="s1">'string'</span>  <span class="c1">//Sets the image source for the inactive right arrow (default 'images/chevron-right-inactive.png')</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</pre></div>
+
+<h6>
+<a name="timer" class="anchor" href="#timer"><span class="octicon octicon-link"></span></a>Timer</h6>
+
+<p>superSlider has the option of automatically advancing and moving through the slides. This option is called the "Timer". There are a couple superSlider configurations to go along with the use of the Timer:</p>
+
+<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">superSlider</span><span class="p">({</span>
+            <span class="s1">'timer_on'</span><span class="o">:</span> <span class="s1">'boolean'</span><span class="p">,</span>                <span class="c1">//Either true or false, turns Timer on or off (default false)</span>
+            <span class="s1">'timer_speed'</span><span class="o">:</span> <span class="s1">'integer'</span>              <span class="c1">//Speed, in milliseconds, for the automatic advancing of the slides</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</pre></div>
+
+<h4>
+<a name="recommended-html-layout" class="anchor" href="#recommended-html-layout"><span class="octicon octicon-link"></span></a>Recommended HTML Layout</h4>
+
+<p>While superSlider should work with several HTML layouts, here is the way I built it to work:</p>
+
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"slider"</span> <span class="na">id=</span><span class="s">"superSlider"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"left-arrow inactive"</span> <span class="na">src=</span><span class="s">"images/chevron-left-inactive.png"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"right-arrow"</span> <span class="na">src=</span><span class="s">"images/chevron-right.png"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"current"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- first &lt;li&gt; is to be .current --&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"info"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;header&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Interdum et<span class="nt">&lt;/a&gt;&lt;/header&gt;</span> <span class="c">&lt;!-- Title of slide --&gt;</span>
+                  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nibh lorem. Maecenas vitae erat eu justo convallis porttitor pretium at purus. In lacus orci, lobortis non luctus eget, posuere sed dolor.<span class="nt">&lt;/p&gt;</span> <span class="c">&lt;!-- Description of slide --&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- Link for image --&gt;</span>
+                  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/960x440"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- Image for slide --&gt;</span>
+                <span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="c">&lt;!-- As many &lt;li&gt;s as you want --&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>If you find a bug, or would like to help out with development, just follow some simple steps:</p>
+
+<ol>
+<li><a href="https://github.com/JoahG/superSlider.js/issues/new">Make an issue.</a></li>
+<li><a href="https://github.com/JoahG/superSlider.js/fork">Fork the repo.</a></li>
+<li>Make your changes.</li>
+<li>Commit and create a pull request.</li>
+</ol><h2>
+<a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h2>
+
+<p>superSlider.js is written and maintained by <a href="http://www.joahg.com">Joah Gerstenberg</a>, copyright 2014. All code contained within these files are licensed under an <a href="https://github.com/JoahG/superSlider.js/blob/gh-pages/LICENSE">MIT license</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/JoahG">JoahG</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
