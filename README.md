@@ -66,7 +66,7 @@ superSlider has the option of automatically advancing and moving through the sli
  	});
 ```
 
-##Recommended HTML Layout
+####Recommended HTML Layout
 While superSlider should work with several HTML layouts, here is the way I built it to work:
 
 ```html
