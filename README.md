@@ -5,6 +5,8 @@ superSlider.js: the superhero of jQuery sliders
 
 ---
 
+To see a demo of superSlider.js in action, check out the [demo page](http://www.joahg.com/superSlider.js/demo.html).
+
 ##Usage
 
 ####Initialization
