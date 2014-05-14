@@ -42,10 +42,10 @@
 			$scope.check_activity();
 		}
 		$(document).ready(function(){
-			$(document).off('click', ".slider .right-arrow:not(.inactive)");
-			$(document).off('click', ".slider .left-arrow:not(.inactive)");
-			$(document).on('click', ".slider .right-arrow:not(.inactive)", function() { $scope.goto_slide($scope.index_shown+1) });
-			$(document).on('click', ".slider .left-arrow:not(.inactive)", function() { $scope.goto_slide($scope.index_shown-1) });
+			$(slider).off('click', ".right-arrow:not(.inactive)");
+			$(slider).off('click', ".left-arrow:not(.inactive)");
+			$(slider).on('click', ".right-arrow:not(.inactive)", function() { $scope.goto_slide($scope.index_shown+1) });
+			$(slider).on('click', ".left-arrow:not(.inactive)", function() { $scope.goto_slide($scope.index_shown-1) });
 			$scope.do_the_magic();
 			lis.each(function(i,v) { $(v).css('left', i*$scope.magic_number); });
 			ul.on('click', "li:not(.current)", function(e){ e.preventDefault(); $scope.goto_slide($(this).index()); });

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('.slider').superSlider({
+	$('#superSlider').superSlider({
 		timer_on: true,
 		timer_speed: 4500
 	});
