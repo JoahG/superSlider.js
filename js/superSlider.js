@@ -1,3 +1,8 @@
+/*!
+ * superSlider.js v1.0.0 (https://github.com/JoahG/bibleRef.js)
+ * Copyright 2014 Joah Gerstenberg
+ * Licensed under MIT License (https://github.com/JoahG/superSlider.js/blob/gh-pages/LICENSE)
+ */
 (function($) { 
 	$.fn.superSlider = function($scope) {
 		var slider = this;
