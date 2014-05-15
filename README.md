@@ -103,6 +103,11 @@ While superSlider should work with several HTML layouts, here is the way I built
 	</div>
 ```
 
+####Swipe Pagination on Mobile
+[`touchwipe.js`](http://www.netcu.de/jquery-touchwipe-iphone-ipad-library) is an optional addon for `superSlider.js`. superSlider is preconfigured to include responsiveness to mobile swipes if the `$.fn.touchwipe()` variable is defined.
+
+You can download touchwipe.js [here](http://www.netcu.de/jquery-touchwipe-iphone-ipad-library).
+
 ##Contributing
 
 If you find a bug, or would like to help out with development, just follow some simple steps:
