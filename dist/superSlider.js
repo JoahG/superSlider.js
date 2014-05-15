@@ -1,5 +1,5 @@
 /*!
- * superSlider.js v1.0.0 (https://github.com/JoahG/bibleRef.js)
+ * superSlider.js v1.0.1 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/superSlider.js/blob/gh-pages/LICENSE)
  */
@@ -20,10 +20,10 @@
 		$scope.timer_on = $scope.timer_on === false || $scope.timer_on === 'false' ? $scope.timer_on : true;
 		$scope.do_the_magic = function() {
 			if ($(window).width() < 767) {
-				$scope.magic_number = $scope.width ? $scope.width : 500;
+				$scope.magic_number = $scope['mobile_width'] ? $scope['mobile_width'] : 500;
 				$scope.left = 0;
 			} else {
-				$scope.magic_number = $scope.width ? $scope.width : 1200;
+				$scope.magic_number = $scope['desktop_width'] ? $scope['desktop_width'] : 1200;
 				$scope.left = 40;
 			}
 		}
