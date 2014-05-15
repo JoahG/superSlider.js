@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>superSlider.js by JoahG</title>
 
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -16,7 +16,7 @@
     <div class="wrapper">
       <header>
         <h1>superSlider.js</h1>
-        <p>the superhero of jQuery sliders</p>
+        <p>superSlider.js: the superhero of jQuery sliders</p>
 
         <p class="view"><a href="https://github.com/JoahG/superSlider.js">View the Project on GitHub <small>JoahG/superSlider.js</small></a></p>
 
@@ -63,8 +63,8 @@
 <h4>
 <a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h4>
 
-<h6>
-<a name="leftright-arrows" class="anchor" href="#leftright-arrows"><span class="octicon octicon-link"></span></a>Left/Right Arrows</h6>
+<h5>
+<a name="leftright-arrows" class="anchor" href="#leftright-arrows"><span class="octicon octicon-link"></span></a>Left/Right Arrows</h5>
 
 <p>There are several configurations available for the left and right arrows for the slider. They can all be seen below, in the context of a <code>.superSlider()</code> call.</p>
 
@@ -80,8 +80,8 @@
     <span class="p">});</span>
 </pre></div>
 
-<h6>
-<a name="timer" class="anchor" href="#timer"><span class="octicon octicon-link"></span></a>Timer</h6>
+<h5>
+<a name="timer" class="anchor" href="#timer"><span class="octicon octicon-link"></span></a>Timer</h5>
 
 <p>superSlider has the option of automatically advancing and moving through the slides. This option is called the "Timer". There are a couple superSlider configurations to go along with the use of the Timer:</p>
 
@@ -89,6 +89,19 @@
         <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">superSlider</span><span class="p">({</span>
             <span class="s1">'timer_on'</span><span class="o">:</span> <span class="s1">'boolean'</span><span class="p">,</span>                <span class="c1">//Either true or false, turns Timer on or off (default false)</span>
             <span class="s1">'timer_speed'</span><span class="o">:</span> <span class="s1">'integer'</span>              <span class="c1">//Speed, in milliseconds, for the automatic advancing of the slides</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</pre></div>
+
+<h5>
+<a name="width" class="anchor" href="#width"><span class="octicon octicon-link"></span></a>Width</h5>
+
+<p>You have the option with superSlider of customizing the width of the slides in your slider. You have two different options: <code>mobile_width</code>, and <code>desktop_width</code>. The <code>mobile_width</code> will be the width used for all window sizes <code>&lt;767px</code>, while the <code>desktop_width</code> will be for window sizes <code>&gt;=767px</code>.</p>
+
+<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">superSlider</span><span class="p">({</span>
+            <span class="s1">'mobile_width'</span><span class="o">:</span> <span class="s1">'integer'</span><span class="p">,</span>              <span class="c1">//Number (pixels) width for mobile (default 500)</span>
+            <span class="s1">'desktop_width'</span><span class="o">:</span> <span class="s1">'integer'</span>              <span class="c1">//Number (pixels) width for desktop (default 1200)</span>
         <span class="p">});</span>
     <span class="p">});</span>
 </pre></div>
@@ -136,7 +149,7 @@
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-    <script src="js/scale.fix.js"></script>
+    <script src="javascripts/scale.fix.js"></script>
     
   </body>
 </html>
