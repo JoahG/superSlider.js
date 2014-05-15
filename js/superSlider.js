@@ -1,5 +1,5 @@
 /*!
- * superSlider.js v1.0.2 (https://github.com/JoahG/bibleRef.js)
+ * superSlider.js v1.0.3 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/superSlider.js/blob/gh-pages/LICENSE)
  */
@@ -63,7 +63,7 @@
 					} 
 				});
 			}
-			if ($scope.timer_on) {
+			if ($scope.timer_on !== undefined && $scope.timer_on == true) {
 				var timer_helper = function() {
 					if (!(rarrow.hasClass('inactive'))) {
 						$scope.goto_slide($scope.index_shown+1);
