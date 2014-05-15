@@ -40,7 +40,7 @@ You should also link to the included `superSlider.css` file for styling, unless 
 
 ####Configuration
 
-######Left/Right Arrows
+#####Left/Right Arrows
 There are several configurations available for the left and right arrows for the slider. They can all be seen below, in the context of a `.superSlider()` call.
 
 ```javascript
@@ -56,7 +56,7 @@ There are several configurations available for the left and right arrows for the
  	});
 ```
 
-######Timer
+#####Timer
 superSlider has the option of automatically advancing and moving through the slides. This option is called the "Timer". There are a couple superSlider configurations to go along with the use of the Timer:
 
 ```javascript
@@ -67,6 +67,19 @@ superSlider has the option of automatically advancing and moving through the sli
      	});
  	});
 ```
+
+#####Width
+You have the option with superSlider of customizing the width of the slides in your slider. You have two different options: `mobile_width`, and `desktop_width`. The `mobile_width` will be the width used for all window sizes `<767px`, while the `desktop_width` will be for window sizes `>=767px`.
+
+```javascript
+    $(document).ready(function(){
+        $('#superSlider').superSlider({
+            'mobile_width': 'integer',              //Number (pixels) width for mobile (default 500)
+            'desktop_width': 'integer'              //Number (pixels) width for desktop (default 1200)
+        });
+    });
+```
+    
 
 ####Recommended HTML Layout
 While superSlider should work with several HTML layouts, here is the way I built it to work:
