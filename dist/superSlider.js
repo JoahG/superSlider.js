@@ -18,7 +18,7 @@
 		$scope.indices = lis.length;
 		$scope.index_shown = 0;
 		$scope.timer_speed = $scope.timer_speed ? $scope.timer_speed : 5000;
-		$scope.timer_on = $scope.timer_on === false || $scope.timer_on === 'false' ? $scope.timer_on : true;
+		$scope.timer_on = $scope.timer_on === true || $scope.timer_on === 'true' ? $scope.timer_on : false;
 		$scope.do_the_magic = function() {
 			if ($(window).width() < 767) {
 				$scope.magic_number = $scope['mobile_width'] ? $scope['mobile_width'] : 500;
@@ -63,7 +63,7 @@
 					} 
 				});
 			}
-			if ($scope !== undefined && $scope.timer_on !== undefined && $scope.timer_on == true) {
+			if ($scope.timer_on) {
 				var timer_helper = function() {
 					if (!(rarrow.hasClass('inactive'))) {
 						$scope.goto_slide($scope.index_shown+1);
