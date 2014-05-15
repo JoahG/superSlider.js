@@ -1,19 +1,20 @@
 /*!
- * superSlider.js v1.0.1 (https://github.com/JoahG/bibleRef.js)
+ * superSlider.js v1.0.2 (https://github.com/JoahG/bibleRef.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/superSlider.js/blob/gh-pages/LICENSE)
  */
 (function($) { 
 	$.fn.superSlider = function($scope) {
+		$scope = $scope == undefined ? {} : $scope;
 		var slider = this;
 		var lis = this.find('li');
 		var ul = this.find('ul');
-		var larrow = $scope['left-arrow-class'] ?  this.find($scope['left-arrow-class']) : this.find('.left-arrow')
-		var rarrow = $scope['right-arrow-class'] ?  this.find($scope['right-arrow-class']) : this.find('.right-arrow')
-		var larrow_src = $scope['left-arrow-src'] ?  $scope['left-arrow-src'] : 'images/chevron-left.png'
-		var rarrow_src = $scope['right-arrow-src'] ?  $scope['right-arrow-src'] : 'images/chevron-right.png'
-		var larrow_inactive_src = $scope['left-arrow-inactive-src'] ?  $scope['left-arrow-inactive-src'] : 'images/chevron-left-inactive.png'
-		var rarrow_inactive_src = $scope['right-arrow-inactive-src'] ?  $scope['right-arrow-inactive-src'] : 'images/chevron-right-inactive.png'
+		var larrow = $scope['left-arrow-class'] ?  this.find($scope['left-arrow-class']) : this.find('.left-arrow');
+		var rarrow = $scope['right-arrow-class'] ?  this.find($scope['right-arrow-class']) : this.find('.right-arrow');
+		var larrow_src = $scope['left-arrow-src'] ?  $scope['left-arrow-src'] : 'images/chevron-left.png';
+		var rarrow_src = $scope['right-arrow-src'] ?  $scope['right-arrow-src'] : 'images/chevron-right.png';
+		var larrow_inactive_src = $scope['left-arrow-inactive-src'] ?  $scope['left-arrow-inactive-src'] : 'images/chevron-left-inactive.png';
+		var rarrow_inactive_src = $scope['right-arrow-inactive-src'] ?  $scope['right-arrow-inactive-src'] : 'images/chevron-right-inactive.png';
 		$scope.indices = lis.length;
 		$scope.index_shown = 0;
 		$scope.timer_speed = $scope.timer_speed ? $scope.timer_speed : 5000;
@@ -57,7 +58,7 @@
 						}
 					}, wipeRight: function() {
 						if (!(larrow.hasClass('inactive'))) {
-							$scope.goto_slide($scope.index_shown-1)
+							$scope.goto_slide($scope.index_shown-1);
 						}
 					} 
 				});
