@@ -63,7 +63,7 @@
 					} 
 				});
 			}
-			if ($scope.timer_on !== undefined && $scope.timer_on == true) {
+			if ($scope !== undefined && $scope.timer_on !== undefined && $scope.timer_on == true) {
 				var timer_helper = function() {
 					if (!(rarrow.hasClass('inactive'))) {
 						$scope.goto_slide($scope.index_shown+1);
