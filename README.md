@@ -46,12 +46,12 @@ There are several configurations available for the left and right arrows for the
 ```javascript
  	$(document).ready(function(){
  		$('#superSlider').superSlider({
-     		'left-arrow-class': 'string',         //Sets the selector class for the left arrow (default '.left-arrow')
-     		'right-arrow-class': 'string',        //Sets the selector class for the right arrow (default '.right-arrow')
-     		'left-arrow-src': 'string',           //Sets the image source for the left arrow (default 'images/chevron-left.png')
-     		'right-arrow-src': 'string',          //Sets the image source for the right arrow (default 'images/chevron-right.png')
-     		'left-arrow-inactive-src': 'string',  //Sets the image source for the inactive left arrow (default 'images/chevron-left-inactive.png')
-     		'right-arrow-inactive-src': 'string'  //Sets the image source for the inactive right arrow (default 'images/chevron-right-inactive.png')
+     		'left-arrow-class': '.left-arrow',                              //Sets the selector class for the left arrow
+     		'right-arrow-class': '.right-arrow',                            //Sets the selector class for the right arrow
+     		'left-arrow-src': 'images/chevron-left.png',                    //Sets the image source for the left arrow
+     		'right-arrow-src': 'images/chevron-right.png',                  //Sets the image source for the right arrow
+     		'left-arrow-inactive-src': 'images/chevron-left-inactive.png',  //Sets the image source for the inactive left arrow
+     		'right-arrow-inactive-src': 'images/chevron-right-inactive.png' //Sets the image source for the inactive right arrow
      	});
  	});
 ```
@@ -62,8 +62,8 @@ superSlider has the option of automatically advancing and moving through the sli
 ```javascript
  	$(document).ready(function(){
  		$('#superSlider').superSlider({
-     		'timer_on': 'boolean',                //Either true or false, turns Timer on or off (default false)
-     		'timer_speed': 'integer'              //Speed, in milliseconds, for the automatic advancing of the slides
+     		'timer_on': false,                                              //Either true or false, turns Timer on or off
+     		'timer_speed': 5000                                             //Speed, in milliseconds, for the automatic advancing of the slides
      	});
  	});
 ```
@@ -74,8 +74,8 @@ You have the option with superSlider of customizing the width of the slides in y
 ```javascript
     $(document).ready(function(){
         $('#superSlider').superSlider({
-            'mobile_width': 'integer',              //Number (pixels) width for mobile (default 500)
-            'desktop_width': 'integer'              //Number (pixels) width for desktop (default 1200)
+            'mobile_width': 500,                                            //Number (pixels) width for mobile
+            'desktop_width': 1200                                           //Number (pixels) width for desktop
         });
     });
 ```
