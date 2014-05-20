@@ -1,5 +1,5 @@
 /*!
- * superSlider.js v1.0.3 (https://github.com/JoahG/bibleRef.js)
+ * superSlider.js v1.0.3 (https://github.com/JoahG/superSlider.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/superSlider.js/blob/gh-pages/LICENSE)
  */
