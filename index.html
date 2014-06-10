@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>superSlider.js by JoahG</title>
 
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -70,12 +70,12 @@
 
 <div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
         <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">superSlider</span><span class="p">({</span>
-            <span class="s1">'left-arrow-class'</span><span class="o">:</span> <span class="s1">'string'</span><span class="p">,</span>         <span class="c1">//Sets the selector class for the left arrow (default '.left-arrow')</span>
-            <span class="s1">'right-arrow-class'</span><span class="o">:</span> <span class="s1">'string'</span><span class="p">,</span>        <span class="c1">//Sets the selector class for the right arrow (default '.right-arrow')</span>
-            <span class="s1">'left-arrow-src'</span><span class="o">:</span> <span class="s1">'string'</span><span class="p">,</span>           <span class="c1">//Sets the image source for the left arrow (default 'images/chevron-left.png')</span>
-            <span class="s1">'right-arrow-src'</span><span class="o">:</span> <span class="s1">'string'</span><span class="p">,</span>          <span class="c1">//Sets the image source for the right arrow (default 'images/chevron-right.png')</span>
-            <span class="s1">'left-arrow-inactive-src'</span><span class="o">:</span> <span class="s1">'string'</span><span class="p">,</span>  <span class="c1">//Sets the image source for the inactive left arrow (default 'images/chevron-left-inactive.png')</span>
-            <span class="s1">'right-arrow-inactive-src'</span><span class="o">:</span> <span class="s1">'string'</span>  <span class="c1">//Sets the image source for the inactive right arrow (default 'images/chevron-right-inactive.png')</span>
+            <span class="s1">'left-arrow-class'</span><span class="o">:</span> <span class="s1">'.left-arrow'</span><span class="p">,</span>                              <span class="c1">//Sets the selector class for the left arrow</span>
+            <span class="s1">'right-arrow-class'</span><span class="o">:</span> <span class="s1">'.right-arrow'</span><span class="p">,</span>                            <span class="c1">//Sets the selector class for the right arrow</span>
+            <span class="s1">'left-arrow-src'</span><span class="o">:</span> <span class="s1">'images/chevron-left.png'</span><span class="p">,</span>                    <span class="c1">//Sets the image source for the left arrow</span>
+            <span class="s1">'right-arrow-src'</span><span class="o">:</span> <span class="s1">'images/chevron-right.png'</span><span class="p">,</span>                  <span class="c1">//Sets the image source for the right arrow</span>
+            <span class="s1">'left-arrow-inactive-src'</span><span class="o">:</span> <span class="s1">'images/chevron-left-inactive.png'</span><span class="p">,</span>  <span class="c1">//Sets the image source for the inactive left arrow</span>
+            <span class="s1">'right-arrow-inactive-src'</span><span class="o">:</span> <span class="s1">'images/chevron-right-inactive.png'</span> <span class="c1">//Sets the image source for the inactive right arrow</span>
         <span class="p">});</span>
     <span class="p">});</span>
 </pre></div>
@@ -87,8 +87,20 @@
 
 <div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
         <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">superSlider</span><span class="p">({</span>
-            <span class="s1">'timer_on'</span><span class="o">:</span> <span class="s1">'boolean'</span><span class="p">,</span>                <span class="c1">//Either true or false, turns Timer on or off (default false)</span>
-            <span class="s1">'timer_speed'</span><span class="o">:</span> <span class="s1">'integer'</span>              <span class="c1">//Speed, in milliseconds, for the automatic advancing of the slides</span>
+            <span class="s1">'timer_on'</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>                                              <span class="c1">//Either true or false, turns Timer on or off</span>
+            <span class="s1">'timer_speed'</span><span class="o">:</span> <span class="mi">5000</span>                                             <span class="c1">//Speed, in milliseconds, for the automatic advancing of the slides</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</pre></div>
+
+<h4>
+<a name="pagination" class="anchor" href="#pagination"><span class="octicon octicon-link"></span></a>Pagination</h4>
+
+<p>superSlider also has the ability to paginate the slides that are given to it. To enable Pagination, simply set the <code>pagination</code> attribute to <code>true</code>:</p>
+
+<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">superSlider</span><span class="p">({</span>
+            <span class="s1">'pagination'</span><span class="o">:</span> <span class="kc">true</span>
         <span class="p">});</span>
     <span class="p">});</span>
 </pre></div>
@@ -100,8 +112,8 @@
 
 <div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
         <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">superSlider</span><span class="p">({</span>
-            <span class="s1">'mobile_width'</span><span class="o">:</span> <span class="s1">'integer'</span><span class="p">,</span>              <span class="c1">//Number (pixels) width for mobile (default 500)</span>
-            <span class="s1">'desktop_width'</span><span class="o">:</span> <span class="s1">'integer'</span>              <span class="c1">//Number (pixels) width for desktop (default 1200)</span>
+            <span class="s1">'mobile_width'</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>                                            <span class="c1">//Number (pixels) width for mobile</span>
+            <span class="s1">'desktop_width'</span><span class="o">:</span> <span class="mi">1200</span>                                           <span class="c1">//Number (pixels) width for desktop</span>
         <span class="p">});</span>
     <span class="p">});</span>
 </pre></div>
@@ -156,7 +168,7 @@
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-    <script src="js/scale.fix.js"></script>
+    <script src="javascripts/scale.fix.js"></script>
     
   </body>
 </html>
