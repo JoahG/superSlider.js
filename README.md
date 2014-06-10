@@ -68,6 +68,17 @@ superSlider has the option of automatically advancing and moving through the sli
  	});
 ```
 
+####Pagination
+superSlider also has the ability to paginate the slides that are given to it. To enable Pagination, simply set the `pagination` attribute to `true`:
+
+```javascript
+    $(document).ready(function(){
+        $('#superSlider').superSlider({
+            'pagination': true
+        });
+    });
+```
+
 #####Width
 You have the option with superSlider of customizing the width of the slides in your slider. You have two different options: `mobile_width`, and `desktop_width`. The `mobile_width` will be the width used for all window sizes `<767px`, while the `desktop_width` will be for window sizes `>=767px`.
 
