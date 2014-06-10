@@ -1,5 +1,5 @@
 /*!
- * superSlider.js v1.0.3 (https://github.com/JoahG/superSlider.js)
+ * superSlider.js v1.2.0 (https://github.com/JoahG/superSlider.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/superSlider.js/blob/gh-pages/LICENSE)
  */
@@ -8,17 +8,19 @@
 		$scope = $scope == undefined ? {} : $scope;
 		var slider = this;
 		var lis = this.find('li');
-		var ul = this.find('ul');
+		var ul = this.find('ul:not(.pagination)');
 		var larrow = $scope['left-arrow-class'] ?  this.find($scope['left-arrow-class']) : this.find('.left-arrow');
 		var rarrow = $scope['right-arrow-class'] ?  this.find($scope['right-arrow-class']) : this.find('.right-arrow');
 		var larrow_src = $scope['left-arrow-src'] ?  $scope['left-arrow-src'] : 'images/chevron-left.png';
 		var rarrow_src = $scope['right-arrow-src'] ?  $scope['right-arrow-src'] : 'images/chevron-right.png';
 		var larrow_inactive_src = $scope['left-arrow-inactive-src'] ?  $scope['left-arrow-inactive-src'] : 'images/chevron-left-inactive.png';
 		var rarrow_inactive_src = $scope['right-arrow-inactive-src'] ?  $scope['right-arrow-inactive-src'] : 'images/chevron-right-inactive.png';
+		var pagination = undefined;
 		$scope.indices = lis.length;
 		$scope.index_shown = 0;
 		$scope.timer_speed = $scope.timer_speed ? $scope.timer_speed : 5000;
 		$scope.timer_on = $scope.timer_on === true || $scope.timer_on === 'true' ? $scope.timer_on : false;
+		$scope.pagination = $scope.pagination === true || $scope.pagination === 'true' ? $scope.pagination : false;
 		$scope.do_the_magic = function() {
 			if ($(window).width() < 767) {
 				$scope.magic_number = $scope['mobile_width'] ? $scope['mobile_width'] : 500;
@@ -40,13 +42,24 @@
 			$scope.index_shown = n;
 			lis.removeClass('current');
 			ul.find('li:nth-child('+($scope.index_shown+1)+')').addClass('current');
+			if ($scope.pagination) {
+				pagination.find('li').removeClass('active');
+				pagination.find('li:nth-child('+($scope.index_shown+1)+')').addClass('active');
+			}
 			$scope.check_activity();
 		}
-		$(document).ready(function(){
-			$(slider).off('click', ".right-arrow:not(.inactive)");
-			$(slider).off('click', ".left-arrow:not(.inactive)");
-			$(slider).on('click', ".right-arrow:not(.inactive)", function() { $scope.goto_slide($scope.index_shown+1) });
-			$(slider).on('click', ".left-arrow:not(.inactive)", function() { $scope.goto_slide($scope.index_shown-1) });
+		$scope.paginate = function() {
+			slider.append('<ul class="pagination"></ul>');
+			pagination = slider.find('ul.pagination');
+			for (var i = 0; i < $scope.indices; i++) { pagination.append('<li></li>'); }
+			pagination.find('li:nth-child('+($scope.index_shown+1)+')').addClass('active');
+			slider.on('click', '.pagination li:not(.active)', function() { $scope.goto_slide($(this).index()); });
+		}
+		slider.ready(function(){
+			slider.off('click', '.right-arrow:not(.inactive)');
+			slider.off('click', '.left-arrow:not(.inactive)');
+			slider.on('click', '.right-arrow:not(.inactive)', function() { $scope.goto_slide($scope.index_shown+1) });
+			slider.on('click', '.left-arrow:not(.inactive)', function() { $scope.goto_slide($scope.index_shown-1) });
 			$scope.do_the_magic();
 			lis.each(function(i,v) { $(v).css('left', i*$scope.magic_number); });
 			ul.on('click', "li:not(.current)", function(e){ e.preventDefault(); $scope.goto_slide($(this).index()); });
@@ -82,6 +95,9 @@
 						timer_helper();
 					}, $scope.timer_speed);
 				});
+			}
+			if ($scope.pagination) { 
+				$scope.paginate(); 
 			}
 		});
 	};

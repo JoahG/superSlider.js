@@ -1,5 +1,5 @@
 /*!
- * superSlider.js v1.0.3 (https://github.com/JoahG/superSlider.js)
+ * superSlider.js v1.2.0 (https://github.com/JoahG/superSlider.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/superSlider.js/blob/gh-pages/LICENSE)
  */
@@ -19,6 +19,7 @@
 		$scope.index_shown = 0;
 		$scope.timer_speed = $scope.timer_speed ? $scope.timer_speed : 5000;
 		$scope.timer_on = $scope.timer_on === true || $scope.timer_on === 'true' ? $scope.timer_on : false;
+		$scope.pagination = $scope.pagination === true || $scope.pagination === 'true' ? $scope.pagination : false;
 		$scope.do_the_magic = function() {
 			if ($(window).width() < 767) {
 				$scope.magic_number = $scope['mobile_width'] ? $scope['mobile_width'] : 500;
@@ -42,7 +43,16 @@
 			ul.find('li:nth-child('+($scope.index_shown+1)+')').addClass('current');
 			$scope.check_activity();
 		}
-		$(document).ready(function(){
+		$scope.paginate = function() {
+			console.log('called')
+			slider.append('<ul class="pagination"></ul>');
+			var pagination = slider.find('ul.pagination');
+			for (var i = 0; i < indices; i++) {
+				pagination.append('<li></li>');
+			}
+			pagination.find('li:nth-child('+(index_shown+1)+')').addClass('active');
+		}
+		slider.ready(function(){
 			$(slider).off('click', ".right-arrow:not(.inactive)");
 			$(slider).off('click', ".left-arrow:not(.inactive)");
 			$(slider).on('click', ".right-arrow:not(.inactive)", function() { $scope.goto_slide($scope.index_shown+1) });
@@ -82,6 +92,11 @@
 						timer_helper();
 					}, $scope.timer_speed);
 				});
+			}
+			console.log($scope.pagination)
+			if ($scope.pagination) {
+				console.log('hey')
+				$scope.paginate();
 			}
 		});
 	};
