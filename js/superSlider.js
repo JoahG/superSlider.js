@@ -1,5 +1,5 @@
 /*!
- * superSlider.js v1.2.0 (https://github.com/JoahG/superSlider.js)
+ * superSlider.js v1.2.1 (https://github.com/JoahG/superSlider.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/superSlider.js/blob/gh-pages/LICENSE)
  */
@@ -24,10 +24,10 @@
 		$scope.do_the_magic = function() {
 			if ($(window).width() < 767) {
 				$scope.magic_number = $scope['mobile_width'] ? $scope['mobile_width'] : 500;
-				$scope.left = 0;
+				$scope.left_offset = $scope['left_offset_mobile'] || 0;
 			} else {
 				$scope.magic_number = $scope['desktop_width'] ? $scope['desktop_width'] : 1200;
-				$scope.left = 40;
+				$scope.left_offset = $scope['left_offset_desktop'] || 40;
 			}
 		}
 		$scope.check_activity = function() {
@@ -38,7 +38,7 @@
 		}
 		$scope.goto_slide = function(n) {
 			$scope.do_the_magic();
-			ul.css('left', ($scope.left + (n * (0-$scope.magic_number))).toString()+'px');
+			ul.css('left', ($scope.left_offset + (n * (0-$scope.magic_number))).toString()+'px');
 			$scope.index_shown = n;
 			lis.removeClass('current');
 			ul.find('li:nth-child('+($scope.index_shown+1)+')').addClass('current');

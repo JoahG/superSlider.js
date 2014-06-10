@@ -90,7 +90,18 @@ You have the option with superSlider of customizing the width of the slides in y
         });
     });
 ```
-    
+
+####Left Offset
+In order to properly center the slides inside of the confines of your project's container, you may need to specify a specific left offset. This may be done with `left_offset_mobile`, and `left_offset_desktop`:
+
+```javascript
+    $(document).ready(function(){
+        $('#superSlider').superSlider({
+            'left_offset_mobile': 0,                                        //Number (pixels) left offset for mobile
+            'left_offset_desktop': 40                                       //Number (pixels) left offset for desktop
+        });
+    });
+```
 
 ####Recommended HTML Layout
 While superSlider should work with several HTML layouts, here is the way I built it to work:
