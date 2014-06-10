@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>superSlider.js by JoahG</title>
 
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -119,6 +119,19 @@
 </pre></div>
 
 <h4>
+<a name="left-offset" class="anchor" href="#left-offset"><span class="octicon octicon-link"></span></a>Left Offset</h4>
+
+<p>In order to properly center the slides inside of the confines of your project's container, you may need to specify a specific left offset. This may be done with <code>left_offset_mobile</code>, and <code>left_offset_desktop</code>:</p>
+
+<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">superSlider</span><span class="p">({</span>
+            <span class="s1">'left_offset_mobile'</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>                                        <span class="c1">//Number (pixels) left offset for mobile</span>
+            <span class="s1">'left_offset_desktop'</span><span class="o">:</span> <span class="mi">40</span>                                       <span class="c1">//Number (pixels) left offset for desktop</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</pre></div>
+
+<h4>
 <a name="recommended-html-layout" class="anchor" href="#recommended-html-layout"><span class="octicon octicon-link"></span></a>Recommended HTML Layout</h4>
 
 <p>While superSlider should work with several HTML layouts, here is the way I built it to work:</p>
@@ -168,7 +181,7 @@
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-    <script src="js/scale.fix.js"></script>
+    <script src="javascripts/scale.fix.js"></script>
     
   </body>
 </html>
