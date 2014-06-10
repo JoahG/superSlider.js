@@ -68,7 +68,7 @@ superSlider has the option of automatically advancing and moving through the sli
  	});
 ```
 
-####Pagination
+#####Pagination
 superSlider also has the ability to paginate the slides that are given to it. To enable Pagination, simply set the `pagination` attribute to `true`:
 
 ```javascript
@@ -91,7 +91,7 @@ You have the option with superSlider of customizing the width of the slides in y
     });
 ```
 
-####Left Offset
+#####Left Offset
 In order to properly center the slides inside of the confines of your project's container, you may need to specify a specific left offset. This may be done with `left_offset_mobile`, and `left_offset_desktop`:
 
 ```javascript
