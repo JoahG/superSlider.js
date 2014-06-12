@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>superSlider.js by JoahG</title>
 
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -132,6 +132,45 @@
 </pre></div>
 
 <h4>
+<a name="custom-event-handling" class="anchor" href="#custom-event-handling"><span class="octicon octicon-link"></span></a>Custom Event Handling</h4>
+
+<p>Because superSlider.js works largely off of jQuery's custom event engine, you may use this to your advantage in a few different ways.</p>
+
+<p>There are three different events defined when <code>.superSlider()</code> is called on a jQuery element:</p>
+
+<ul>
+<li>  <code>'slideLeft'</code>: event when sliding to the left.</li>
+<li>  <code>'slideRight'</code>: event when sliding to the right.</li>
+<li>  <code>'slideTo'</code>: takes a single integer parameter which is the index of the desired slide to slide to.</li>
+</ul><p>You may define your own callbacks when the slider slides to the right or the left, aka:</p>
+
+<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">superSlider</span><span class="p">();</span>
+
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'slideRight'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Slider Slid Right!'</span><span class="p">);</span>
+            <span class="p">});</span>
+
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'slideLeft'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Slider Slid Left!'</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</pre></div>
+
+<p>You may also <code>.trigger()</code> the events to call them for yourself:</p>
+
+<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">superSlider</span><span class="p">();</span>
+
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'body'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'#superSlider'</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'slideRight'</span><span class="p">);</span> <span class="c1">// Slider will slide right when the body is clicked.</span>
+        <span class="p">})</span>
+    <span class="p">});</span>
+</pre></div>
+
+<h4>
 <a name="recommended-html-layout" class="anchor" href="#recommended-html-layout"><span class="octicon octicon-link"></span></a>Recommended HTML Layout</h4>
 
 <p>While superSlider should work with several HTML layouts, here is the way I built it to work:</p>
@@ -181,7 +220,7 @@
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-    <script src="js/scale.fix.js"></script>
+    <script src="javascripts/scale.fix.js"></script>
     
   </body>
 </html>
