@@ -98,7 +98,7 @@
 			});
 
 			slider.on('click', '.left-arrow',  function() { 
-				slider.trigger('slideLeft');
+				return slider.trigger('slideLeft');
 			});
 
 			slider.on('slideTo', function(e, n) {
@@ -127,7 +127,6 @@
 
 			// Code for timer_on == true
 			if ($scope.timer_on) {
-
 				var timer_helper = function() {
 					if (!(rarrow.hasClass('inactive'))) {
 						$scope.goto_slide($scope.index_shown+1);

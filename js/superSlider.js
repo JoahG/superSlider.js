@@ -90,7 +90,7 @@
 			});
 
 			slider.on('slideLeft', function(e, n) {
-				return slider.trigger('slideTo', ($scope.index_shown - (n || 1) > -1 ? $scope.index_shown - (n || 1) : $scope.index_shown))
+				return slider.trigger('slideTo', ($scope.index_shown - (n || 1) >= 0 ? $scope.index_shown - (n || 1) : $scope.index_shown))
 			});
 
 			slider.on('click', '.right-arrow', function() { 
@@ -98,7 +98,7 @@
 			});
 
 			slider.on('click', '.left-arrow',  function() { 
-				slider.trigger('slideLeft');
+				return slider.trigger('slideLeft');
 			});
 
 			slider.on('slideTo', function(e, n) {
@@ -109,7 +109,7 @@
 			$scope.init();
 
 			// Setup-y stuff
-			lis.each(function(i,v) { $(v).css('left', i * $scope.magic_number); });
+			lis.each(function(i,v) { $(v).css('left', i*$scope.magic_number); });
 			ul.on('click', "li:not(.current)", function(e){ e.preventDefault(); $scope.goto_slide($(this).index()); });
 
 			// Paginate slides if pagination == true
