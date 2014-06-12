@@ -1,5 +1,5 @@
 /*!
- * superSlider.js v1.3.0 (https://github.com/JoahG/superSlider.js)
+ * superSlider.js v1.3.1 (https://github.com/JoahG/superSlider.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/superSlider.js/blob/gh-pages/LICENSE)
  */
@@ -78,8 +78,8 @@
 		// When the slider is ready...
 		slider.ready(function(){
 			// Clear any preexisting jQuery events
-			slider.off('click', '.right-arrow:not(.inactive)');
-			slider.off('click', '.left-arrow:not(.inactive)');
+			slider.off('click', '.right-arrow');
+			slider.off('click', '.left-arrow');
 			slider.off('slideRight');
 			slider.off('slideLeft');
 			slider.off('slideTo');
