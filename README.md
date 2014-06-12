@@ -103,6 +103,45 @@ In order to properly center the slides inside of the confines of your project's 
     });
 ```
 
+####Custom Event Handling
+Because superSlider.js works largely off of jQuery's custom event engine, you may use this to your advantage in a few different ways.
+
+There are three different events defined when `.superSlider()` is called on a jQuery element:
+
+ -   `'slideLeft'`: event when sliding to the left.
+ -   `'slideRight'`: event when sliding to the right.
+ -   `'slideTo'`: takes a single integer parameter which is the index of the desired slide to slide to.
+
+You may define your own callbacks when the slider slides to the right or the left, aka:
+
+```javascript
+    $(document).ready(function(){
+        $('#superSlider').superSlider();
+
+        $('#superSlider').ready(function(){
+            $('#superSlider').on('slideRight', function() {
+                console.log('Slider Slid Right!');
+            });
+
+            $('#superSlider').on('slideLeft', function() {
+                console.log('Slider Slid Left!');
+            });
+        });
+    });
+```
+
+You may also `.trigger()` the events to call them for yourself:
+
+```javascript
+    $(document).ready(function(){
+        $('#superSlider').superSlider();
+
+        $('body').click(function(){
+            $('#superSlider').trigger('slideRight'); // Slider will slide right when the body is clicked.
+        })
+    });
+```
+
 ####Recommended HTML Layout
 While superSlider should work with several HTML layouts, here is the way I built it to work:
 
