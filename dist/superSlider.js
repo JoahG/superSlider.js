@@ -1,5 +1,5 @@
 /*!
- * superSlider.js v1.3.1 (https://github.com/JoahG/superSlider.js)
+ * superSlider.js v1.3.2 (https://github.com/JoahG/superSlider.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/superSlider.js/blob/gh-pages/LICENSE)
  */
@@ -86,12 +86,12 @@
 
 			// Define the jQuery events for slider
 			slider.on('slideRight', function(e, n) {
-				return slider.trigger('slideTo', ($scope.index_shown + (n || 1) < $scope.indices ? $scope.index_shown + (n || 1) : $scope.index_shown));
-			});
+        return slider.trigger('slideTo', ($scope.index_shown + (n || 1) < $scope.indices ? $scope.index_shown + (n || 1) : 0));
+      });
 
-			slider.on('slideLeft', function(e, n) {
-				return slider.trigger('slideTo', ($scope.index_shown - (n || 1) >= 0 ? $scope.index_shown - (n || 1) : $scope.index_shown))
-			});
+      slider.on('slideLeft', function(e, n) {
+        return slider.trigger('slideTo', ($scope.index_shown - (n || 1) >= 0 ? $scope.index_shown - (n || 1) : $scope.indices - 1))
+      });
 
 			slider.on('click', '.right-arrow', function() { 
 				return slider.trigger('slideRight');
