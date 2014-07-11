@@ -1,5 +1,5 @@
 /*!
- * superSlider.js v1.3.2 (https://github.com/JoahG/superSlider.js)
+ * superSlider.js v1.3.3 (https://github.com/JoahG/superSlider.js)
  * Copyright 2014 Joah Gerstenberg
  * Licensed under MIT License (https://github.com/JoahG/superSlider.js/blob/gh-pages/LICENSE)
  */
@@ -107,6 +107,7 @@
 
 			// Call init function to get window width
 			$scope.init();
+			$scope.check_activity();
 
 			// Setup-y stuff
 			lis.each(function(i,v) { $(v).css('left', i*$scope.magic_number); });
@@ -127,16 +128,8 @@
 
 			// Code for timer_on == true
 			if ($scope.timer_on) {
-				var timer_helper = function() {
-					if (!(rarrow.hasClass('inactive'))) {
-						$scope.goto_slide($scope.index_shown+1);
-					} else {
-						$scope.goto_slide(0);
-					}
-				}
-
 				var timer = setInterval(function(){
-					timer_helper();
+					slider.trigger('slideRight');
 				}, $scope.timer_speed);
 
 				slider.on('mouseenter', function(){
@@ -145,7 +138,7 @@
 
 				slider.on('mouseleave', function(){
 					timer = setInterval(function(){
-						timer_helper();
+						slider.trigger('slideRight');
 					}, $scope.timer_speed);
 				});
 			}
