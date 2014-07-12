@@ -86,12 +86,12 @@
 
 			// Define the jQuery events for slider
 			slider.on('slideRight', function(e, n) {
-        return slider.trigger('slideTo', ($scope.index_shown + (n || 1) < $scope.indices ? $scope.index_shown + (n || 1) : 0));
-      });
+				return slider.trigger('slideTo', ($scope.index_shown + (n || 1) < $scope.indices ? $scope.index_shown + (n || 1) : 0));
+			});
 
-      slider.on('slideLeft', function(e, n) {
-        return slider.trigger('slideTo', ($scope.index_shown - (n || 1) >= 0 ? $scope.index_shown - (n || 1) : $scope.indices - 1))
-      });
+			slider.on('slideLeft', function(e, n) {
+				return slider.trigger('slideTo', ($scope.index_shown - (n || 1) >= 0 ? $scope.index_shown - (n || 1) : $scope.indices - 1))
+			});
 
 			slider.on('click', '.right-arrow', function() { 
 				return slider.trigger('slideRight');
